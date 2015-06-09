@@ -1,6 +1,6 @@
 ## Fun with Sherlock Holmes and Markov Chain Frequency Counts
 
-Markov Chains (in our case subsequent word pairs), create a list of all the pairs for a give text.
+Markov Chains (in our case subsequent word pairs), create a list of all the pairs for a given text.
 Now, if we count those frequencies of word pairs, we end up with a profile that uniquely identifies 
 this piece of text. Now, say we are encountered by a completely new document that we know nothing about.
 Using this same process we can compare the pair frequencies against our known document to see how they
