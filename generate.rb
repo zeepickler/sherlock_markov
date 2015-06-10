@@ -1,5 +1,12 @@
 require 'csv'
 
+# To use this tool:
+# First run scrape.rb with your text file.
+# Now using the 'pairs.csv' output file, for example:
+# 
+# ruby generate.rb pairs.csv 20 
+# ie. use pairs.csv input file and create a sentence 20 words long
+
 csv_file = ARGV[0]
 sentence_length = ARGV[1].to_i
 

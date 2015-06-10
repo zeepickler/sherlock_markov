@@ -1,7 +1,11 @@
 require 'csv'
 
+# ruby scrape.rb sherlock_holmes.txt
+
+source_text_file = ARGV[0]
+
 # open txt source
-f = File.open('sherlock_holmes.txt','rb')
+f = File.open(source_text_file,'rb')
 
 # break text into words
 text = f.read.split(" ")
