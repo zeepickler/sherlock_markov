@@ -1,6 +1,7 @@
-## Fun with Sherlock Holmes and Pair Frequency Counts
+## Fun with Sherlock Holmes and N-Gram Frequency Counts
 
-Given subsequent word pairs in a body text, create a list of all the pairs for a given text.
+Given a body text, create a word pair N-Gram.
+
 Now, if we count those frequencies of word pairs, we end up with a profile that uniquely identifies 
 this piece of text. Now, say we are encountered by a completely new document that we know nothing about.
 Using this same process we can compare the pair frequencies against our known document to see how they

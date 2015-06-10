@@ -9,7 +9,7 @@ text = f.read.split(" ")
 # close txt source
 f.close
 
-# create an array of subsequent word pairs (array)
+# create an array of subsequent word pairs n-gram (array)
 # ie. "Mary had a little lamb"
 # [
 #   ["mary","had"],
