@@ -16,7 +16,8 @@ CSV.open(csv_file,'rb') do |file|
   file.each{|line| array << line }
 end
 
-def get_next_word(first_word, array)
+# alternate method (unused)
+def get_next_word_weighted(first_word, array)
   word_array = []
   array.each do |line|
     word_array << line if line[0] == first_word
@@ -39,8 +40,6 @@ def get_next_word(first_word, array)
 
   # prob = {1 => ["foo"], 2 => ["bar", "baz"]}
 
-
-
   # get random number based on the total count
   choice = rand(total_count) + 1
 
@@ -53,6 +52,17 @@ def get_next_word(first_word, array)
   return chosen_word_array[rand(chosen_word_array.size)]
 end
 
+# randomly chosen next word (we use this method)
+def get_next_word_random(first_word, array)
+  word_array = []
+  array.each do |line|
+    word_array << line[1] if line[0] == first_word
+  end
+
+  # randomly select a word
+  return word_array[rand(word_array.size)]
+end
+
 
 # select a starting word
 word = array[ rand( array.size ) ][0] 
@@ -61,7 +71,7 @@ sentence = word
 
 sentence_length.times do 
 
-  word = get_next_word(word, array)
+  word = get_next_word_random(word, array)
   sentence = sentence + ' ' + word
 
 end

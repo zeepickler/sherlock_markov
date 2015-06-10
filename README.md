@@ -16,7 +16,13 @@ Sherlock Holmes).
    of unique word pairs plus the number of times that pair occurs in the text ie. ["first word", "second word", 3]
 3. To generate a sentence, use the 'pairs.csv' file to run the generator, ie. 'ruby generate.rb pairs.csv 20' creates a sentence 20 words long.
 
-# Note: the sentence generator weights the word selection based on the frequency of the first word. 
+# Note: 
+
+The sentence generator randomly selects the next word (given multiple pairs that match on the first word). 
+
+# Errata: 
+
+An alternate method called "get_next_word_weighted" will make the next word selection using the same frequencies as exist in the text. (The results were not as interesting.)
 
 Consider:
 
