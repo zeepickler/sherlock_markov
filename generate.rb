@@ -31,26 +31,26 @@ def get_next_word(first_word, array)
   # build probability model
   prob = {}
   word_array.each do |line|
-    prob[line[1]] = line[2].to_i / total_count
+    num = line[2].to_i
+    prob[num] = [] if prob[num].nil?
+
+    prob[num] << line[1]
   end
 
-  # prob = {"foo" => 0.25, "bar" => 0.75}
+  # prob = {1 => ["foo"], 2 => ["bar", "baz"]}
 
-  # get random number
-  choice = rand
 
-  delta = 1
-  chosen_word = ""
 
-  prob.each do |word, freq|
-    diff = (freq - choice).abs
-    if diff < delta
-      delta = diff
-      chosen_word = word
-    end
-  end
+  # get random number based on the total count
+  choice = rand(total_count) + 1
 
-  return chosen_word
+  frequencies = prob.keys
+
+  chosen_frequency = frequencies.min_by{|x| (x.to_f - choice).abs }
+
+  chosen_word_array = prob[chosen_frequency]
+
+  return chosen_word_array[rand(chosen_word_array.size)]
 end
 
 
