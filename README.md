@@ -27,6 +27,7 @@ An alternate method called "get_next_word_weighted" will make the next word sele
 Consider:
 
 ['help','me',1]
+
 ['help','you',3]
 
 In this instance, given the word 'help', 'you' will be chosen 75% of the time and 'me' will be chosen 25% of the time.
